@@ -5,10 +5,7 @@ public class TaskSixArrayTwo {
         int[] numDays = new int[30];
         float sum = 0;
         float average;
-        for (int i = 0; i < numDays.length; i++) {
-            numDays[i] = RandomNumber.generateRandomArray()[i];
-            System.out.println("Сумма расходов за " + (i + 1) + " день " + numDays[i] + " рублей");
-        }
+            numDays = RandomNumber.generateRandomArray();
         for (int i = 0; i < numDays.length; i++) {
             sum += numDays[i];
         }
@@ -17,15 +14,13 @@ public class TaskSixArrayTwo {
         System.out.println("Задача 2 ");
         // Задача 2
         int min = numDays[0];
+        int max = numDays[0];
         for (int i = 1; i < numDays.length; i++) {
             if (min > numDays[i]) {
                 min = numDays[i];
-            }
-        }
-        int max = numDays[0];
-        for (int i = 1; i < numDays.length; i++) {
-            if (max < numDays[i])
+            } else if (max < numDays[i]) {
                 max = numDays[i];
+            }
         }
         System.out.println("минимальное значение:" + min);
         System.out.println("максимальное значение:" + max);
